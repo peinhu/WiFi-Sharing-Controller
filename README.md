@@ -1,5 +1,5 @@
-# WIFI-sharing-control
-WIFI共享控制，让你的电脑变成无线AP热点:)
+# WiFi-sharing-controller
+WiFi共享控制，让你的电脑变成无线AP热点:)
 
 # Notice
 适用操作系统Windows only.  
