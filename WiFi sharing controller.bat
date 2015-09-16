@@ -7,14 +7,14 @@ REM @github https://github.com/peinhu
 REM @date 2015-09-12
 
 echo ===========================
-echo ==== WIFIå…±äº«æ§åˆ¶ v1.0 ====
+echo ==== WIFI¹²Ïí¿ØÖÆ v1.0 ====
 echo ===========================
-echo Tip:è¿è¡Œå¯èƒ½éœ€è¦ç®¡ç†å‘˜æƒé™
+echo Tip:ÔËĞĞ¿ÉÄÜĞèÒª¹ÜÀíÔ±È¨ÏŞ
 goto MenuShow
 
 :MenuSelect
 set input=
-set /p input=è¯·é€‰æ‹©ï¼š
+set /p input=ÇëÑ¡Ôñ£º
 if not defined input ( goto Exception )
 if %input%==0 ( goto WIFIStatus ) else if %input%==1 ( goto WIFISet ) else if %input%==2 ( goto WIFIStart ) else if %input%==3 ( goto WIFIStop ) else if %input%==bye ( goto Bye ) else if %input%==exit ( goto Exit ) else ( goto Exception )
 
@@ -24,17 +24,17 @@ goto MenuSelect
 
 :WIFISet
 set ssid=
-set /p ssid=è®¾ç½®æ— çº¿åç§°(ssid):
+set /p ssid=ÉèÖÃÎŞÏßÃû³Æ(ssid):
 if not defined ssid ( goto Exception )
 set key=
-set /p key=è®¾ç½®æ— çº¿å¯†ç (key):
+set /p key=ÉèÖÃÎŞÏßÃÜÂë(key):
 if not defined key ( goto Exception )
 netsh wlan set hostednetwork mode=allow ssid=%ssid% key=%key%
 goto MenuSelect
 
 :WIFIStart
 netsh wlan start hostednetwork
-echo å¯åŠ¨åè¯·ç¡®ä¿ ç½‘ç»œè¿æ¥-å±æ€§-å…±äº« ä¸­å·²å‹¾é€‰å…è®¸è¿æ¥å…±äº«
+echo Æô¶¯ºóÇëÈ·±£ ÍøÂçÁ¬½Ó-ÊôĞÔ-¹²Ïí ÖĞÒÑ¹´Ñ¡ÔÊĞíÁ¬½Ó¹²Ïí
 echo.
 goto MenuSelect
 
@@ -43,16 +43,16 @@ netsh wlan stop hostednetwork
 goto MenuSelect
 
 :Exception
-echo é”™è¯¯ï¼šæ— æ•ˆçš„æŒ‡ä»¤!
+echo ´íÎó£ºÎŞĞ§µÄÖ¸Áî!
 goto MenuShow
 
 :MenuShow
 echo.
-echo 1 - è®¾ç½®WIFIå…±äº«
-echo 2 - å¯åŠ¨WIFIå…±äº«
-echo 3 - å…³é—­WIFIå…±äº«
-echo 0 - æ˜¾ç¤ºWIFIçŠ¶æ€
-echo bye/exit - é€€å‡º
+echo 1 - ÉèÖÃWIFI¹²Ïí
+echo 2 - Æô¶¯WIFI¹²Ïí
+echo 3 - ¹Ø±ÕWIFI¹²Ïí
+echo 0 - ÏÔÊ¾WIFI×´Ì¬
+echo bye/exit - ÍË³ö
 goto MenuSelect
 
 :Bye
@@ -62,4 +62,3 @@ exit
 
 :Exit
 exit
-
