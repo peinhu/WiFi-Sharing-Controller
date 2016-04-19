@@ -25,7 +25,6 @@ CD /D "%~dp0"
 echo ===========================
 echo ==== WIFI共享控制 v1.1 ====
 echo ===========================
-echo Tip:运行需要管理员权限
 goto CheckAuth
 
 :MenuSelect
@@ -70,7 +69,7 @@ goto MenuSelect
 
 :Bye
 echo Bye!
-ping -n 1 127.0.0.1 >nul
+ping -n 2 localhost >nul
 exit
 
 :Exit
@@ -78,5 +77,9 @@ exit
 
 :CheckAuth
 net session >nul 2>&1
-if '%errorlevel%' NEQ '0' ( echo 当前权限：普通用户 ) else ( echo 当前权限：管理员 )
+if '%errorlevel%' NEQ '0' ( 
+echo 权限不足！请手动以管理员身份运行
+pause
+goto Exit
+)
 goto MenuSelect
