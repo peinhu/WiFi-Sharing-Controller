@@ -1,4 +1,4 @@
-# WiFi-sharing-controller
+# WiFi-Sharing-Controller
 WiFi共享控制，让你的电脑变成无线AP热点:)
 
 # Notice
